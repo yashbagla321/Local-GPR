@@ -1,0 +1,21 @@
+import numpy as np
+import Online_LGP
+import scipy.io
+
+
+
+x = [] 
+y = []
+x = scipy.io.loadmat('x.mat')
+y = scipy.io.loadmat('y.mat')
+
+
+
+
+Max_Size = 80; # maximal number of data points
+lim = 0.6;     # limit value for generation of new local models
+Yh = Online_LGP(x,y,Max_Size,lim,0,1,0);
+
+
+Max_Size = 5; # maximal number of data points
+Yh = Online_LGP(x,y,Max_Size,lim,0,1,1);
